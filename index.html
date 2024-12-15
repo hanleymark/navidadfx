@@ -16,6 +16,7 @@
       font-size: 16px;
       cursor: pointer;
       border-radius: 5px;
+      border: none;
     }
     .red {
       background-color: red;
@@ -25,12 +26,12 @@
 </head>
 <body>
   <h1>Soundboard</h1>
-  <button onclick="playSound('fanfare')">Play Fanfare</button>
-  <button onclick="playSound('knock')">Play Knock Knock</button>
-  <button onclick="playSound('jinglebells')">Play Jingle Bells</button>
-  <button onclick="playSound('silentnight')">Play Silent Night</button>
+  <button onclick="playSound('fanfare')">Play Fanfare 🎵</button>
+  <button onclick="playSound('knock')">Play Knock Knock 🔊</button>
+  <button onclick="playSound('jinglebells')">Play Jingle Bells 🎵</button>
+  <button onclick="playSound('silentnight')">Play Silent Night 🎵</button>
   <br>
-  <button class="red" onclick="stopAllSounds()">Stop All Sounds</button>
+  <button class="red" onclick="stopAllSounds()">Stop All Sounds 🔇</button>
 
   <!-- Audio Elements -->
   <audio id="fanfare" src="sound/fanfare.mp3"></audio>
