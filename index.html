@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soundboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    button {
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Soundboard</h1>
+  <button onclick="playSound('fanfare')">Play Fanfare</button>
+  <button onclick="playSound('jinglebells')">Play Jingle Bells</button>
+  <button onclick="playSound('knock')">Play Knock</button>
+  <button onclick="playSound('silentnight')">Play Silent Night</button>
+  <br>
+  <button onclick="stopAllSounds()">Stop All Sounds</button>
+
+  <!-- Audio Elements -->
+  <audio id="fanfare" src="sound/fanfare.mp3"></audio>
+  <audio id="jinglebells" src="sound/jinglebells.mp3"></audio>
+  <audio id="knock" src="sound/knock.mp3"></audio>
+  <audio id="silentnight" src="sound/silentnight.mp3"></audio>
+
+  <script>
+    const sounds = {
+      fanfare: document.getElementById('fanfare'),
+      jinglebells: document.getElementById('jinglebells'),
+      knock: document.getElementById('knock'),
+      silentnight: document.getElementById('silentnight')
+    };
+
+    function playSound(soundId) {
+      stopAllSounds(); // Stop any currently playing sounds
+      sounds[soundId].play();
+    }
+
+    function stopAllSounds() {
+      Object.values(sounds).forEach(sound => {
+        sound.pause();
+        sound.currentTime = 0; // Reset to the beginning
+      });
+    }
+  </script>
+</body>
+</html>
